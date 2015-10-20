@@ -326,6 +326,7 @@ Revision=''
 Source=''
 State=''
 sysroot=''
+android_pie=''
 _a=''
 _exe=''
 _o=''
@@ -2438,6 +2439,12 @@ else
 	done
     done
 
+fi
+
+if test "X$android_pie" != X; then
+    cppflags="$cppflags -fPIE"
+    ccflags="$ccflags -fPIE"
+    ldflags="$ldflags -fPIE -pie"
 fi
 
 : find out where common programs are
